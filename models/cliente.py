@@ -1,6 +1,6 @@
-class cliente:
+class Cliente:
     def __init__(self,nome, user, senha, venc, serv):
-        self.nome=cliente
+        self.nome=nome
         self.user=user
         self.senha=senha
         self.venc=venc

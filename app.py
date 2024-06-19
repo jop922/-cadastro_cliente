@@ -1,16 +1,16 @@
 from os import write
 import streamlit as st
+import pandas as pd
 from numpy.core.fromnumeric import size   
 import controllers.ClienteControllers as ClienteController
-import models.cliente as cliente
+import models.Cliente as cliente
 
 
 st.title('Gerenciamento de Clientes JPTV')
 st.sidebar.title('Menu')
+paginaclientes=st.sidebar.selectbox('Selecione a opção',['Inserir Cliente', 'Gerenciar Cliente','Paineis', 'Aplicativos'])
 
-paginaselecionada=st.sidebar.selectbox('Selecione a opção',['Inserir Cliente', 'Gerenciar Cliente'])
-
-if paginaselecionada == 'Inserir Cliente':
+if paginaclientes == 'Inserir Cliente':
     with st.form(key='inserir_cliente'):
         input_nome=st.text_input(label='Insira o nome do cliente')
         input_user=st.text_input(label='Insira o Usuario')
@@ -28,7 +28,3 @@ if paginaselecionada == 'Inserir Cliente':
         cliente.serv = input_serv
 
         ClienteController.incluir(cliente)
-
-
-    elif paginaselecionada == 'Gerenciar Cliente':
-        st.title('Gerenciar Cliente')
