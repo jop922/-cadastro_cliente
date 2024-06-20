@@ -1,5 +1,7 @@
 class Cliente:
-    def __init__(self,nome, user, senha, venc, serv):
+
+    def __init__(self, ID_user, nome, user, senha, venc, serv):
+        self.ID_user=ID_user
         self.nome=nome
         self.user=user
         self.senha=senha
