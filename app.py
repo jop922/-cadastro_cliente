@@ -11,10 +11,15 @@ import models.Cliente as cliente
 import JPTV.inserir as pginserir
 import JPTV.gestor as pggestor
 
+st.markdown('''
+# Gerenciamento de Clientes JPTV
+##Gestão de vencimentos
+''')
 
-st.title('Gerenciamento de Clientes JPTV')
 st.sidebar.title('Menu')
+#jptv=st.sidebar.selectbox('Selecione a opção',['Inserir Cliente', 'Gerenciar Cliente','Paineis', 'Aplicativos'])
 jptv=st.sidebar.selectbox('Selecione a opção',['Inserir Cliente', 'Gerenciar Cliente','Paineis', 'Aplicativos'])
+
 
 #cadastrar novo cliente
 if jptv == 'Inserir Cliente':

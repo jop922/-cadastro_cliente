@@ -9,10 +9,10 @@ def incluir():
     with st.form(key='inserir_cliente'):
         input_nome=st.text_input(label='Insira o nome do cliente')
         input_user=st.text_input(label='Insira o Usuario')
-        input_senha=st.text_input(label='Insira a senha')
+        input_senha=st.text_input(label='Insira a senha',type='password')
         input_venc=st.date_input("Insira o Vencimento", value=None, format="DD/MM/YYYY")
         input_serv=st.selectbox(label='Selecione o Servidor',options=['Warez', 'Live', 'Elite'])
-        input_button_subtmit=st.form_submit_button(label='Adicionar Usuario')
+        input_button_subtmit=st.form_submit_button(label='Adicionar Usuario',type='primary')
 
     if input_button_subtmit:
         
