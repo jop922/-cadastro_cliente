@@ -1,3 +1,5 @@
+import JPTV.gestor as pgconsulta
+
 class Cliente:
 
     def __init__(self, ID_user, nome, user, senha, venc, serv):

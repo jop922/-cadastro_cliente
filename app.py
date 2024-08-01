@@ -7,35 +7,50 @@ import streamlit.components.v1 as components
 
 #import de arquivos
 import controllers.ClienteControllers as ClienteController
-import models.Cliente as cliente
+import models.Cliente as mdcliente
 import JPTV.inserir as pginserir
-import JPTV.gestor as pggestor
+import JPTV.gestor as pgconsulta
+import JPTV.Paineis as pgpaineis
+import JPTV.Aplicativos as pgaplicativos
+import base64
 
-st.markdown('''
-# Gerenciamento de Clientes JPTV
-##Gestão de vencimentos
-''')
 
+st.markdown("""
+    <style>
+    .header {
+        font-size:60px !important;
+        color: #e63633;
+            
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+with st.container():
+    st.markdown('***<p class="header"> Gerenciamento de Clientes </p>***', unsafe_allow_html=True)
+
+image_path = 'LOGO.png'
+st.sidebar.image(image_path, width=70, use_column_width=False)
 st.sidebar.title('Menu')
-#jptv=st.sidebar.selectbox('Selecione a opção',['Inserir Cliente', 'Gerenciar Cliente','Paineis', 'Aplicativos'])
-jptv=st.sidebar.selectbox('Selecione a opção',['Inserir Cliente', 'Gerenciar Cliente','Paineis', 'Aplicativos'])
+
+JPTV=st.sidebar.selectbox('Selecione a opção',['Usuario', 'Meus Usuarios','Paineis', 'Aplicativos'])
 
 
 #cadastrar novo cliente
-if jptv == 'Inserir Cliente':
-    pginserir.incluir()
+if JPTV == 'Usuario':
+    st.experimental_set_query_params()
+    pginserir.Adicionar()
 
-    
+  
+# Consulta de clientes
+if JPTV == 'Meus Usuarios':
+    pgconsulta.Consulta()
+    pgconsulta.exportar()
 
-# Gerenciamento do cliente já cadastrado
-    # Consulta de clientes
-if jptv == 'Gerenciar Cliente':
-    pggestor.consultar()
-
-# Gestão de acessos aos porais
-# if jptv == 'Paineis':
-
+# Gestão de acessos aos paineis
+if JPTV == 'Paineis':
+    pgpaineis.Paineis()
 
 # galeria de aplicativos
-# if jptv == 'Aplicativos':
-
+if JPTV == 'Aplicativos':
+    pgaplicativos.Aplicativos()
