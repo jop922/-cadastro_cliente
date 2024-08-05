@@ -34,29 +34,27 @@ def Aplicativos():
          st.write('Iptvsmarters - ', '78522')
          st.write('XCIPTV - ', '63207')
 
-    # with col4:
-    #      st.write('⚙️ DNS STB Wplay App:','15.204.233.167')
-    #      st.write('⚙️ DNS STB TV Antiga:','149.56.44.24')
-    #      st.write('⚙️ DNS STB V2:','198.50.195.225')
-    #      st.write('⚙️ DNS STB V3:','104.194.10.27')
-    #      st.write('⚙️ DNS STB v3²:','149.56.45.112')
-
-
-def aplicativos():
-    st.markdown('''## Acesso as Lojas de aplicativos''')
-    colunas = st.columns((2,2,2))
+    st.write("---")
+    with st.container():
+        st.markdown('''## DNS Dedicado para Apps Smart UP / Smart STB''')
+    colunas = st.columns((4,4,4))
     campos = ['DNS Warez','DNS Live','DNS Elite']
+
     for col, campo_nome in zip(colunas,campos):
-          col.write(campo_nome)
-          
-          col4, col5,col6 = st.columns(3)
-          with col4:
-               st.write('VU Player Pro - ', '917475')
-          with col5:
-             st.write('VU Player Pro - ', '917475')
-          with col6:
-              st.write('VU Player Pro - ', '917475')
-	
-	
- 	
-	
+        col.write(campo_nome)
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.write('⚙️ Wplay App:','15.204.233.167')
+        st.write('⚙️ TV Antiga:','149.56.44.24')
+        st.write('⚙️ DNS STB V2:','198.50.195.225')
+        st.write('⚙️ DNS STB V3:','104.194.10.27')
+        st.write('⚙️ DNS STB v3²:','149.56.45.112')
+    with col5:
+        st.write('⚙️ DNS STB v1:','158.69.9.178')
+        st.write('⚙️ DNS STB v1²:','144.217.37.230')
+        st.write('⚙️ DNS STB V1³:','198.100.153.247')
+        st.write('⚙️ DNS STB V2:','51.222.158.23')
+    with col6:
+        st.write('⚙️ DNS STB V2:','157.230.95.192')
+        st.write('⚙️ DNS STB V3:','216.238.102.162')
+        st.write('⚙️ DNS STB V4:','157.230.95.192')

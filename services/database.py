@@ -1,5 +1,6 @@
 import pyodbc
 import pandas as pd
+from models import Cliente
 
 
 server = 'JOAO'
@@ -8,3 +9,4 @@ username = 'Joao'
 password = '97519242'
 cnxn=pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=JOAO;DATABASE=cadastro_cliente;Trusted_connection=yes')
 cursor=cnxn.cursor()
+

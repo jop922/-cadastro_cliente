@@ -3,8 +3,6 @@ import services.database as db
 from typing import List
 import pandas as pd
 import streamlit as st 
-import io
-import pyodbc
 
 
 #Incluir cliente na base de dados
@@ -47,13 +45,13 @@ def alterar(cliente):
 
 def selecionartodos():
     db.cursor.execute("""
-    SELECT ID_user, clinome, cliuser, clisenha, CONVERT(VARCHAR, clivenc, 103) AS vencimento, cliserv 
+    SELECT ID_user, clinome, cliuser, clisenha, clivenc, cliserv 
     FROM cliente
     """)
     costumerList=[]
     for row in db.cursor.fetchall():
         costumerList.append(mdcliente.Cliente(row[0],row[1],row[2],row[3],row[4],row[5]))
     return costumerList
-    st.rerun()
+    st.experimental_rerun()
 
 

@@ -14,7 +14,6 @@ import JPTV.Paineis as pgpaineis
 import JPTV.Aplicativos as pgaplicativos
 import base64
 
-
 st.markdown("""
     <style>
     .header {
