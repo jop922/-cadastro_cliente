@@ -40,15 +40,18 @@ if JPTV == 'Usuario':
     st.experimental_set_query_params()
     pginserir.Adicionar()
 
+
   
 # Consulta de clientes
 if JPTV == 'Meus Usuarios':
     pgconsulta.Consulta()
     pgconsulta.exportar()
 
+
 # Gestão de acessos aos paineis
 if JPTV == 'Paineis':
     pgpaineis.Paineis()
+
 
 # galeria de aplicativos
 if JPTV == 'Aplicativos':
