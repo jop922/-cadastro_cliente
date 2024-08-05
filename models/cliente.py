@@ -1,6 +1,6 @@
 import JPTV.gestor as pgconsulta
 
-class Cliente:
+class Teste:
 
     def __init__(self, ID_user, nome, user, senha, venc, serv):
         self.ID_user=ID_user

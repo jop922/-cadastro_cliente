@@ -12,7 +12,7 @@ import JPTV.inserir as pginserir
 
 
 def consultabd():
-    query = 'SELECT ID_user, clinome, cliuser, clisenha, CONVERT(VARCHAR, clivenc, 103) AS vencimento, cliserv FROM cliente ORDER BY vencimento ASC'
+    query = 'SELECT ID_user, clinome, cliuser, clisenha, CONVERT(VARCHAR, clivenc, 103) AS vencimento, cliserv FROM teste ORDER BY vencimento ASC'
     conn=pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=JOAO;DATABASE=cadastro_cliente;Trusted_connection=yes')
     df = pd.read_sql_query(query, conn)
     # Fechar a conexão

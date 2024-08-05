@@ -43,9 +43,9 @@ def Adicionar():
         
     if input_button_subtmit:
         if recuperado==None:
-            ClienteController.incluir(mdcliente.Cliente(0,input_nome,input_user,input_senha,input_venc,input_serv))
+            ClienteController.incluir(mdcliente.Teste(0,input_nome,input_user,input_senha,input_venc,input_serv))
             st.success('Usuario Cadastrado com sucesso!')
         else:
             st.experimental_set_query_params()   
-            ClienteController.alterar(mdcliente.Cliente(recuperado.ID_user,input_nome,input_user,input_senha,input_venc,input_serv))
+            ClienteController.alterar(mdcliente.Teste(recuperado.ID_user,input_nome,input_user,input_senha,input_venc,input_serv))
             st.success('Usuario Alterado com sucesso!')
