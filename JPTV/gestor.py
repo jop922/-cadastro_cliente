@@ -1,15 +1,11 @@
 import streamlit as st
 import pandas as pd 
 import pyodbc
-import streamlit.components.v1 as components
 from io import BytesIO
 
-import services.database as db
 import controllers.ClienteControllers as ClienteController
-import models.Cliente as mdcliente
+# import models.Cliente as mdcliente
 import JPTV.inserir as pginserir
-
-
 
 def consultabd():
     query = 'SELECT ID_user, clinome, cliuser, clisenha, CONVERT(VARCHAR, clivenc, 103) AS vencimento, cliserv FROM teste ORDER BY vencimento ASC'

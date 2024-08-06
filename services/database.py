@@ -1,6 +1,4 @@
 import pyodbc
-import pandas as pd
-from models import Cliente
 
 
 server = 'JOAO'

@@ -1,4 +1,4 @@
-import JPTV.gestor as pgconsulta
+
 
 class Teste:
 

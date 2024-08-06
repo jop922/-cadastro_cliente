@@ -1,8 +1,6 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import controllers.ClienteControllers as ClienteController
 import models.Cliente as mdcliente
-import JPTV.gestor as pgconsulta
 
 
 

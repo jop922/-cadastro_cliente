@@ -1,8 +1,4 @@
 import streamlit as st
-import pandas as pd 
-import streamlit.components.v1 as components
-import controllers.ClienteControllers as ClienteController
-import models.Cliente as mdcliente
 
 def Paineis():
     st.markdown('''

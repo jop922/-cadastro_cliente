@@ -1,7 +1,6 @@
 import models.Cliente as mdcliente
 import services.database as db
 from typing import List
-import pandas as pd
 import streamlit as st 
 
 

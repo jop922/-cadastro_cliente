@@ -1,18 +1,13 @@
 #import de bibliotecas
-from os import write
 import streamlit as st
-import pandas as pd
-from numpy.core.fromnumeric import size   
-import streamlit.components.v1 as components
 
 #import de arquivos
-import controllers.ClienteControllers as ClienteController
-import models.Cliente as mdcliente
+# import controllers.ClienteControllers as ClienteController
+# import models.Cliente as mdcliente
 import JPTV.inserir as pginserir
 import JPTV.gestor as pgconsulta
 import JPTV.Paineis as pgpaineis
 import JPTV.Aplicativos as pgaplicativos
-import base64
 
 st.markdown("""
     <style>
