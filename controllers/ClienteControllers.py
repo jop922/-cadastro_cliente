@@ -2,7 +2,6 @@ import models.Cliente as mdcliente
 import services.database as db
 from typing import List
 import streamlit as st 
-from models.Cliente import Teste 
 
 
 #Incluir cliente na base de dados
