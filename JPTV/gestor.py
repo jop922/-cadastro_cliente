@@ -8,7 +8,7 @@ import controllers.ClienteControllers as ClienteController
 import JPTV.inserir as pginserir
 
 def consultabd():
-    query = 'SELECT ID_user, clinome, cliuser, clisenha, CONVERT(VARCHAR, clivenc, 103) AS vencimento, cliserv FROM teste ORDER BY vencimento ASC'
+    query = 'SELECT ID_user, clinome, cliuser, clisenha, CONVERT(VARCHAR, clivenc, 103) AS vencimento, cliserv FROM cliente ORDER BY vencimento ASC'
     conn=pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=JOAO;DATABASE=cadastro_cliente;Trusted_connection=yes')
     df = pd.read_sql_query(query, conn)
     # Fechar a conexão
@@ -17,11 +17,15 @@ def consultabd():
 
 def Consulta():
     df = consultabd()
-    param_id = st.experimental_get_query_params()
-    if param_id =={}:
-        colunas = st.columns((1,2,2,2,2,2,2,2))
-        campos = ['Nº','Nome','Usuario','Senha','Vencimento','Servidor', 'Excluir','Alterar']
-        
+
+
+    if 'ID_user' not in st.session_state:
+        st.session_state.ID_user = None
+
+    if st.session_state.ID_user is None:
+        colunas = st.columns((1, 2, 2, 2, 2, 2, 2, 2))
+        campos = ['Nº', 'Nome', 'Usuario', 'Senha', 'Vencimento', 'Servidor', 'Excluir', 'Alterar']
+                
         for col, campo_nome in zip(colunas,campos):
             col.write(campo_nome)
         
@@ -41,16 +45,15 @@ def Consulta():
             on_click_Alterar=button_space_Alterar.button('Alterar','btnAlterar' + str(row.ID_user))
             if on_click_Excluir:
                 ClienteController.deletar(row.ID_user)
-                st.experimental_rerun()
+                st.rerun()
             if on_click_Alterar:
-                st.experimental_set_query_params(
-                    ID_user=[row.ID_user])
-                st.experimental_rerun()
+                st.session_state.ID_user = row.ID_user
+                st.rerun()
     else:    
-        on_click_voltar=st.button('Voltar')
+        on_click_voltar = st.button('Voltar')
         if on_click_voltar:
-            st.experimental_set_query_params()
-            st.experimental_rerun()
+            st.session_state.ID_user = None
+            st.rerun()
         pginserir.Adicionar()
 
 # Função principal da aplicação

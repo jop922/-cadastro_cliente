@@ -12,16 +12,16 @@ def Paineis():
     
     with col1:
         st.link_button('Warez','https://wplay.vip/')
-        st.write('userficticio')
-        st.write('Senha123')
+        st.write('jop922')
+        st.write('270515j')
     
     with col2:
         st.link_button('Live','https://cms.connectvps.com/login.php')
-        st.write('userficticio')
-        st.write('Senha123')
+        st.write('Jop922')
+        st.write('270515')
 
         
     with col3:
         st.link_button('Elite','https://cms.offx.me/login')
-        st.write('userficticio')       
-        st.write('Senha123')
+        st.write('jadm6710')       
+        st.write('201293')

@@ -1,6 +1,6 @@
+import controllers.ClienteControllers
 
-
-class Teste:
+class Cliente:
 
     def __init__(self, ID_user, nome, user, senha, venc, serv):
         self.ID_user=ID_user

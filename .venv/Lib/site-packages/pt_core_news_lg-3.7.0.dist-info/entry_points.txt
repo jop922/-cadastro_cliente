@@ -1,2 +1,0 @@
-[spacy_models]
-pt_core_news_lg = pt_core_news_lg
