@@ -2,10 +2,11 @@
 import streamlit as st
 
 #import de arquivos
-import JPTV.inserir as pginserir
+
 import JPTV.gestor as pgconsulta
 import JPTV.Paineis as pgpaineis
 import JPTV.Aplicativos as pgaplicativos
+import JPTV.inserir as pginserir
 
 st.markdown("""
     <style>

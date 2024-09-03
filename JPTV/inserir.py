@@ -1,8 +1,6 @@
 import streamlit as st
 import controllers.ClienteControllers as ClienteController
 import models.cliente as mdcliente
-import JPTV.gestor 
-
 
 def Adicionar():
     # Inicializar o estado de ID_user
